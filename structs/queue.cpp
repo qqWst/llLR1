@@ -10,7 +10,7 @@ bool isEmptyQueue(Queue* queue) {
     return queue->head == nullptr;
 }
 
-void pushQueue(Queue* queue, const int& value) {
+void pushQueue(Queue* queue, const string& value) {
     QueueNode* newNode = new QueueNode{value, nullptr};
     if (queue->tail == nullptr) {
         queue->head = newNode;

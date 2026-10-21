@@ -368,9 +368,8 @@ int main() {
                 Queue* queue = fetchQueue(dsName);
                 if (in >> value) {
                     try {
-                        int v = stoi(value);
-                        pushQueue(queue, v);
-                        cout << "-> " << v << endl; changed = true;
+                        pushQueue(queue, value);
+                        cout << "-> " << value << endl; changed = true;
                     } catch (...) { cout << "No" << endl; }
                 } else cout << "No" << endl;
                 break;

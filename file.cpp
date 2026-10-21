@@ -241,7 +241,7 @@ void LoadAll() {
                 Queue* queue = fetchQueue(name);
                 for (int i = 0; i < count; ++i) {
                     string s; getline(f, s);
-                    try { pushQueue(queue, stoi(s)); } catch (...) {}
+                    try { pushQueue(queue, s); } catch (...) {}
                 }
             }
         }

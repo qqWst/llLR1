@@ -1,8 +1,8 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -g
-TARGET = program
+TARGET = dbms
 
-SOURCES = main.cpp appcore.cpp commands.cpp structures/array.cpp structures/flist.cpp structures/doublelist.cpp structures/stack.cpp structures/queue.cpp structures/redblacktree.cpp
+SOURCES = main.cpp file.cpp command.cpp structs/array.cpp structs/flist.cpp structs/doubleList.cpp structs/stack.cpp structs/queue.cpp structs/redBlackTree.cpp
 
 all:
 	$(CXX) $(CXXFLAGS) $(SOURCES) -o $(TARGET)

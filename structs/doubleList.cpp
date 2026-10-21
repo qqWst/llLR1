@@ -105,11 +105,11 @@ void deleteByValueDList(DoubleList& DList, string target) {
     while (current->next != nullptr && current->next->data != target) {
         current = current->next;
     }
-    if (current = DList.head) {
+    if (current == DList.head) {
         pop_frontDList(DList);
         return;
     }
-    if (current = DList.tail) {
+    if (current == DList.tail) {
         pop_backDList(DList);
         return;
     }

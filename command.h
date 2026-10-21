@@ -23,6 +23,5 @@ enum class commandType {
 };
 
 commandType getCommand(const std::string& command);
-void printHelp();
 
 #endif

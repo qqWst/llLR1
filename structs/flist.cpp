@@ -128,7 +128,7 @@ void deleteByValueSList(SingleList& SList, string target) {
     while (current->next != nullptr && current->next->data != target) {
         current = current->next;
     }
-    if (current = SList.head) {
+    if (current == SList.head) {
         pop_frontSList(SList);
         return;
     }
@@ -142,7 +142,6 @@ void deleteByValueSList(SingleList& SList, string target) {
 bool getSList(const SingleList& SList, string value) {
     if (SList.head == nullptr) return false;
     SNode* current = SList.head;
-    size_t count = 0;
     while (current != nullptr) {
         if (current->data == value) return true;
         current = current->next;

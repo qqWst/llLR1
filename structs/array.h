@@ -3,7 +3,7 @@
 #include <iostream>
 
 struct Array{
-    string* data;
+    std::string* data;
     size_t size;
     size_t capacity;
 };

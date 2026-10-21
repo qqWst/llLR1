@@ -20,7 +20,6 @@ commandType getCommand(const std::string& command) {
     if (command == "SLREMOVE") return commandType::SLREMOVE;
     if (command == "SLINSERT") return commandType::SLINSERT;
     if (command == "SLSIZE") return commandType::SLSIZE;
-    if (command == "SLDEL") return commandType::SLDEL;
     if (command == "SLPOPBACK") return commandType::SLPOPBACK;
     if (command == "SLPOPFRONT") return commandType::SLPOPFRONT;
     if (command == "SLPOPAFTER") return commandType::SLPOPAFTER;
@@ -35,7 +34,6 @@ commandType getCommand(const std::string& command) {
     if (command == "DLREMOVE") return commandType::DLREMOVE;
     if (command == "DLINSERT") return commandType::DLINSERT;
     if (command == "DLSIZE") return commandType::DLSIZE;
-    if (command == "DLDEL") return commandType::DLDEL;
     if (command == "DLPOPBACK") return commandType::DLPOPBACK;
     if (command == "DLPOPFRONT") return commandType::DLPOPFRONT;
     if (command == "DLPOPAFTER") return commandType::DLPOPAFTER;
@@ -55,23 +53,4 @@ commandType getCommand(const std::string& command) {
     if (command == "HELP") return commandType::HELP;
     if (command == "EXIT") return commandType::EXIT;
     return commandType::UNKNOWN; 
-}
-
-void printHelp(){
-    std::cout <<
-"MPUSH,      SLPUSHBACK,   DLPUSHBACK,   SPUSH,   QPUSH,   TADD,\n"
-"            SLPUSHFRONT,  DLPUSHFRONT,\n"
-"            SLPUSHAFTER,  DLPUSHAFTER,\n"
-"            SLPUSHBEFORE, DLPUSHBEFORE,\n"
-"MSET,       SLSET,        DLSET,\n"
-"MGET,       SLGET,        DLGET,                 TFIND,\n"
-"MREMOVE,    SLREMOVE,     DLREMOVE,\n"
-"MINSERT,    SLINSERT,     DLINSERT,\n"
-"MSIZE,      SLSIZE,       DLSIZE,\n"
-"MDEL,       SLDEL,        DLDEL,                 TDEL,\n"
-"            SLPOPBACK,    DLPOPBACK,    SPOP,    QPOP,\n"
-"            SLPOPFRONT,   DLPOPFRONT,\n"
-"            SLPOPAFTER,   DLPOPAFTER,\n"
-"            SLPOPBEFORE,  DLPOPBEFORE,\n"
-"PRINT, HELP, EXIT\n";
 }
