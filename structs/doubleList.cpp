@@ -120,16 +120,36 @@ void deleteByValueDList(DoubleList& DList, string target) {
     }
 }
 
-string getByIndexDList(const DoubleList& DList, size_t index){
-    if (!index) throw out_of_range("ОШИБКА: (getByIndexDList) index вне размера списка!");
+void setDList(DoubleList& DList, string value, string target) {
+    if (DList.head == nullptr) return;
     DNode* current = DList.head;
-    size_t count = 0;
-    while (current != nullptr) {
-        if (count == index) return current->data;
-        count++;
+    while (current != nullptr && current != target) {
         current = current->next;
     }
-    throw out_of_range("ОШИБКА: (getByIndexDList) index вне размера списка!");
+    if (current != nullptr) {
+        current->data = value;
+    }
+}
+
+bool getDList(const DoubleList& DList, string value){
+    if (DList.head == nullptr) return false;
+    DNode* current == DList.head;
+    while (current != nullptr && current->data != value) {
+        if (current->data == value) return true;
+        current = current->next;
+    }
+    return false;
+}
+
+size_t sizeOfDList(const DoubleList& DList) {
+    if (DList.head == nullptr) return 0;
+    size_t count = 0;
+    DNode* current = DList.head;
+    while (current != nullptr) {
+        current = current->next;
+        count++;
+    }
+    return count;
 }
 
 void printDList(const DoubleList& DList) {

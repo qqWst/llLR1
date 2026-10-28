@@ -34,7 +34,7 @@ void expandCapacity(Array& arr, size_t newCapacity) {
         newData[i] = arr.data[i];
     }
     delete[] arr.data;
-    arr.data     = newData;
+    arr.data = newData;
     arr.capacity = newCapacity;
 }
 
@@ -60,7 +60,7 @@ void insertArray(Array& arr, size_t index, string value) {
     }
 
     arr.data[index] = value;
-    ++arr.data;
+    ++arr.size;
 }
 
 void removeArray(Array& arr, size_t index) {
@@ -73,6 +73,16 @@ void removeArray(Array& arr, size_t index) {
     }
 
     --arr.size;
+}
+
+void deleteArray(Array& arr, string value) {
+    for (size_t i = 0; i < arr.size; ++i) {
+        if (arr.data[i] == value) {
+            removeArray(arr, i);
+            return;
+        }
+    }
+    throw out_of_range("ОШИБКА: (MDEL) value вне массива!!!");
 }
 
 void printArray(const Array& arr) {

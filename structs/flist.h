@@ -23,6 +23,8 @@ void pop_afterSList(SingleList& SList, std::string target);
 void pop_beforeSList(SingleList& SList, std::string target);
 void deleteByValueSList(SingleList& SList, std::string target);
 bool getSList(const SingleList& SList, std::string value);
+bool setSList(SingleList& SList, std::string value);
+size_t sizeOfSList(const SingleList& SList);
 void printSList(const SingleList& SList);
 
 

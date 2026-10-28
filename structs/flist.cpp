@@ -27,6 +27,7 @@ void push_backSList(SingleList& SList, string value) {
     while (current != nullptr) {
         current = current->next;
     }
+    if (current == nullptr) return;
     SNode* newNode = new SNode;
     newNode->data = value;
     newNode->next = nullptr;
@@ -149,8 +150,31 @@ bool getSList(const SingleList& SList, string value) {
     return false;
 }
 
+void setSList(SingleList& SList, string value, string target) {
+    if (SList.head == nullptr) return;
+    SNode* current = SList.head;
+    while (current != nullptr && current != target) {
+        current = current->next;
+    }
+    if (current != nullptr) {
+        SNode* newNode = new SNode{value, current->next};
+        current->next = newNode;
+    }
+}
+
+size_t sizeOfSList(const SingleList& SList) {
+    if (SList.head == nullptr) return 0;
+    size_t count = 0;
+    SNode* current = SList.head;
+    while (current != nullptr) {
+        current = current->next;
+        count++;
+    }
+    return count;
+}
+
 void printSList(const SingleList& SList) {
-    if (SList.head == nullptr) {
+    if (SList.head == nullptr) D << {
         cout << "Односвязный список пуст." << endl;
         return;
     }
